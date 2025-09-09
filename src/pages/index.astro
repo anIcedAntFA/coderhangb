@@ -1,0 +1,278 @@
+---
+import BaseHead from '@/components/base-head.astro';
+import Button from '@/components/button.astro';
+import Footer from '@/components/Footer.astro';
+import Header from '@/components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '@/consts';
+---
+
+<!doctype html>
+<html lang='en' data-theme='light'>
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1 class='heading-11 m-1 px-10'>🧑‍🚀 Hello, Astronaut!</h1>
+			<!-- Different sizes -->
+			<article class='prose prose-sm'>Small typography</article>
+			<article class='prose prose-base'>Base typography (default)</article>
+			<article class='prose prose-lg'>Large typography</article>
+			<article class='prose prose-xl'>Extra large typography</article>
+			<article class='prose prose-2xl'>2X large typography</article>
+
+			<div
+				class='text-xs mt-4 p-2 bg-green-200'
+				sm='text-sm bg-blue-200 p-4'
+				md='p-6 bg-purple-200 text-base'
+				lg='bg-orange-200 p-8 text-lg'
+				xl='bg-pink-200 p-10 text-xl'
+			>
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+				veniam esse saepe eos numquam. Nisi praesentium expedita quibusdam
+				dolorem minima deleniti vel, quo id quisquam sed. Blanditiis molestias
+				accusantium aspernatur ratione illum praesentium eaque, quod esse
+				facilis sunt nam repellat harum! Placeat, vero ducimus. Repudiandae
+				placeat, quaerat nesciunt praesentium earum eligendi saepe sit in nobis?
+				Aut eaque sequi impedit vero cumque. Voluptas voluptatibus, dolorem
+				magni quis reprehenderit doloribus numquam omnis quo exercitationem
+				laborum earum vel esse minima, modi maxime perferendis qui, consequatur
+				quia ut nihil? Nisi porro ex natus similique voluptate accusamus
+				distinctio vero. Quibusdam facere eius maxime repudiandae. Culpa vitae
+				nobis dolores minima commodi perferendis sed cum illo, at neque natus
+				fuga veritatis quibusdam! Saepe dicta, nisi facilis ex necessitatibus
+				eaque sed odit sapiente nesciunt ipsam explicabo ab quibusdam placeat.
+				Voluptas, odit esse. Beatae possimus magnam aliquam, in ipsam, aliquid
+				earum quasi omnis ratione explicabo, accusamus recusandae expedita id
+				nam error nesciunt officia nobis exercitationem porro cupiditate maiores
+				ducimus neque. Unde provident possimus totam nulla, deserunt veritatis
+				architecto, doloribus quis est et officia repudiandae tenetur maiores
+				dicta nostrum ipsa fuga quisquam. Porro corporis sapiente numquam
+				consequatur dolores magnam officia harum reiciendis corrupti! Laborum
+				esse, accusantium architecto velit alias perferendis.
+			</div>
+
+			<Button disabled>
+				<span>Click me!</span>
+			</Button>
+
+			<Button outlined variant='danger' size='lg'>
+				<span>Click me!</span>
+			</Button>
+
+			<i class='i-logos:astro text-xl'></i>
+			<!-- A basic anchor icon from Phosphor icons -->
+			<div class='i-ph-anchor-simple-thin'></div>
+			<!-- An orange alarm from Material Design Icons -->
+			<div class='i-mdi-alarm text-orange-400 text-op-80'></div>
+			<!-- A large Vue logo -->
+			<span aria-hidden='true' class='i-logos-vue text-2xl'></span>
+			<!-- Sun in light mode, Moon in dark mode, from Carbon -->
+			<button class='i-carbon-sun dark:i-carbon-moon'></button>
+			<!-- Twemoji of laugh, turns to tear on hovering -->
+			<div
+				class='i-twemoji-grinning-face-with-smiling-eyes hover:i-twemoji-face-with-tears-of-joy'
+			>
+			</div>
+			<p class='text-clamp-base'>
+				Welcome to the official <a href='https://astro.build/'>Astro</a> blog starter
+				template. This template serves as a lightweight, minimally-styled starting
+				point for anyone looking to build a personal website, blog, or portfolio
+				with Astro.
+			</p>
+			<button class='btn focus:outline-none focus:ring-2 focus:ring-red-600'
+				>Get Started</button
+			>
+			<p class='card'>
+				This template comes with a few integrations already configured in your
+				<code>astro.config.mjs</code> file. You can customize your setup with
+				<a href='https://astro.build/integrations'>Astro Integrations</a> to add
+				tools like Tailwind, React, or Vue to your project.
+			</p>
+			<p>Here are a few ideas on how to get started with the template:</p>
+			<ul class='text-gray-500 border-2 b-amber dark:bg-green-100'>
+				<li class='text-emerald'>
+					Edit this page in <code>src/pages/index.astro</code>
+				</li>
+				<li class='text-title'>
+					Edit the site header items in <code>src/components/Header.astro</code>
+				</li>
+				<li class='prose-link btn'>
+					Add your name to the footer in <code>src/components/Footer.astro</code
+					>
+				</li>
+				<li>
+					Check out the included blog posts in <code>src/content/blog/</code>
+				</li>
+				<li>
+					Customize the blog post page layout in <code
+						>src/layouts/BlogPost.astro</code
+					>
+				</li>
+			</ul>
+			<p class='bg-brand-primary'>
+				Have fun! If you get stuck, remember to
+				<a href='https://docs.astro.build/'>read the docs</a>
+				or <a href='https://astro.build/chat'>join us on Discord</a> to ask questions.
+			</p>
+			<p class='bg-main text-main' bg='cyan'>
+				Looking for a blog template with a bit more personality? Check out
+				<a href='https://github.com/Charca/astro-blog-template'
+					>astro-blog-template</a
+				>
+				by <a href='https://twitter.com/Charca'>Maxi Ferreira</a>.
+			</p>
+			<br />
+			<p class='text-clamp-xs bg'>
+				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi
+				cupiditate quisquam ea aliquam iure eaque accusamus doloribus ex fugit
+				dolores optio eveniet neque at, laborum eum? Cumque, quaerat delectus!
+				Eaque?
+			</p>
+			<p class='text-clamp-sm border-2 rounded-3xl bg-subtle'>
+				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi
+				cupiditate quisquam ea aliquam iure eaque accusamus doloribus ex fugit
+				dolores optio eveniet neque at, laborum eum? Cumque, quaerat delectus!
+				Eaque?
+			</p>
+			<p class='text-clamp-base bg-muted'>
+				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi
+				cupiditate quisquam ea aliquam iure eaque accusamus doloribus ex fugit
+				dolores optio eveniet neque at, laborum eum? Cumque, quaerat delectus!
+				Eaque?
+			</p>
+			<p class='text-clamp-lg bg-emphasized'>
+				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi
+				cupiditate quisquam ea aliquam iure eaque accusamus doloribus ex fugit
+				dolores optio eveniet neque at, laborum eum? Cumque, quaerat delectus!
+				Eaque?
+			</p>
+			<p class='text-clamp-xl bg-inverted'>
+				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi
+				cupiditate quisquam ea aliquam iure eaque accusamus doloribus ex fugit
+				dolores optio eveniet neque at, laborum eum? Cumque, quaerat delectus!
+				Eaque?
+			</p>
+			<p class='text-clamp-2xl bg-panel'>
+				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi
+				cupiditate quisquam ea aliquam iure eaque accusamus doloribus ex fugit
+				dolores optio eveniet neque at, laborum eum? Cumque, quaerat delectus!
+				Eaque?
+			</p>
+			<p class='bg-error shadow-sm'>
+				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi
+				cupiditate quisquam ea aliquam iure eaque accusamus doloribus ex fugit
+				dolores optio eveniet neque at, laborum eum? Cumque, quaerat delectus!
+				Eaque?
+			</p>
+			<p class='bg-warning'>
+				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi
+				cupiditate quisquam ea aliquam iure eaque accusamus doloribus ex fugit
+				dolores optio eveniet neque at, laborum eum? Cumque, quaerat delectus!
+				Eaque?
+			</p>
+			<p class='bg-success'>
+				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi
+				cupiditate quisquam ea aliquam iure eaque accusamus doloribus ex fugit
+				dolores optio eveniet neque at, laborum eum? Cumque, quaerat delectus!
+				Eaque?
+			</p>
+			<p class='bg-info'>
+				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi
+				cupiditate quisquam ea aliquam iure eaque accusamus doloribus ex fugit
+				dolores optio eveniet neque at, laborum eum? Cumque, quaerat delectus!
+				Eaque?
+			</p>
+			<h1 class='heading-1'>Lorem ipsum dolor sit amet</h1>
+			<h2 class='heading-2'>Lorem ipsum dolor sit amet</h2>
+			<h3 class='heading-3'>Lorem ipsum dolor sit amet</h3>
+			<h4 class='heading-4'>Lorem ipsum dolor sit amet</h4>
+			<h5 class='heading-5'>Lorem ipsum dolor sit amet</h5>
+
+			<!-- Typography examples with configured color schemes -->
+			<div class='max-w-none prose text-clamp-content'>
+				<h1 class='headings'>
+					Heading 1 - Uses gray-900 in light mode, white in dark mode
+				</h1>
+				<h2 class='headings'>
+					Heading 2 - Uses gray-900 in light mode, white in dark mode
+				</h2>
+				<h3 class='headings'>
+					Heading 3 - Uses gray-900 in light mode, white in dark mode
+				</h3>
+
+				<p class='lead'>
+					Lead paragraph - Uses gray-600 in light mode, gray-400 in dark mode
+				</p>
+
+				<p class='body'>
+					Body text - Uses gray-700 in light mode, gray-300 in dark mode.
+					Regular paragraph with <a href='#'>styled link</a> - gray-900/white
+				</p>
+
+				<p>
+					<strong class='bold'>Bold text</strong> - Uses gray-900 in light mode,
+					white in dark mode Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					Quia eos ratione ipsam magni eaque sapiente magnam illum, facilis in minima
+					ipsum, sequi necessitatibus cum quisquam modi recusandae laudantium fugiat
+					repellat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
+					perspiciatis. Nemo commodi, consequuntur dolor doloremque at magnam veniam
+					impedit alias ducimus soluta accusamus culpa similique reiciendis nisi
+					eligendi voluptas harum!
+				</p>
+
+				<ul class='bullets'>
+					<li class='bullets'>
+						Bullet point - Uses gray-300 in light mode, gray-600 in dark mode
+					</li>
+					<li class='counters'>
+						Counter text - Uses gray-500 in light mode, gray-400 in dark mode
+					</li>
+				</ul>
+
+				<ol class='list-decimal list-inside'>
+					<li class='bullets'>Numbered list item 1</li>
+					<li class='bullets'>Numbered list item 2</li>
+				</ol>
+
+				<blockquote class='quotes'>
+					<p>Quote text - gray-900/gray-100 with border gray-200/gray-700</p>
+				</blockquote>
+
+				<p>
+					Here's some <code class='code'>inline code</code> - gray-900/white
+				</p>
+
+				<pre><code class="pre-code">{`
+          Pre-formatted code block
+// Uses gray-200/gray-300 text on gray-800/rgba background
+function example() {
+  return "Hello World";
+}`}</code></pre>
+
+				<hr />
+
+				<table>
+					<thead>
+						<tr>
+							<th>Header 1</th>
+							<th>Header 2</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Cell 1</td>
+							<td>Cell 2</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<p><small>Caption text - gray-500/gray-400</small></p>
+
+				<p>Press <kbd>Ctrl+C</kbd> to copy</p>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

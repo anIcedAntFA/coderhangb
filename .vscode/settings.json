@@ -1,0 +1,54 @@
+{
+	"files.associations": {
+		"wrangler.json": "jsonc"
+	},
+
+	"editor.defaultFormatter": "biomejs.biome",
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.biome": "explicit",
+		"source.organizeImports.biome": "explicit",
+		"source.action.useSortedAttributes.biome": "explicit",
+		"source.action.useSortedProperties.biome": "explicit"
+	},
+
+	// "prettier.documentSelectors": ["**/*.astro", "**/*.vue"],
+	"[astro]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": "explicit",
+			"source.organizeImports": "never"
+		}
+	},
+
+	"[typescript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[markdown]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[mdx]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+
+	"cSpell.enabledFileTypes": {
+		"astro": true,
+		"mdx": true,
+		"astro-markdown": true
+	}
+}

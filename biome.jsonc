@@ -1,0 +1,262 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": {
+					"level": "on",
+					"options": {
+						"groups": [
+							// Group 1: Specific core external packages (e.g., @tanstack, react-i18next)
+							// These are explicitly listed to ensure they come first.
+							[":PACKAGE:"],
+							":BLANK_LINE:",
+							// Group 2: Node.js built-in modules (e.g., path, fs)
+							[":BUN:", ":NODE:", "URL"],
+							":BLANK_LINE:",
+							// Group 3: Other generic external packages
+							// This will catch any remaining packages not explicitly listed in Group 1 or Group 2.
+							":PACKAGE:",
+							":BLANK_LINE:",
+							// Group 4: Alias imports (e.g., @/shared)
+							// This covers all aliases starting with @/
+							[
+								// "@/app/**",
+								// "@/core/atom/**",
+								// "@/core/molecule/**",
+								// "@/core/organism/**",
+								// "@/core/template/**",
+								// "@/shared/**",
+								"@/**"
+							],
+							":BLANK_LINE:",
+							// Group 5: Relative imports (e.g., ../organisms, ./molecules)
+							// Covers both parent directory (../) and current directory (./) relative paths
+							"./**",
+							"../**"
+						]
+					}
+				},
+				"useSortedAttributes": {
+					"level": "on",
+					"options": {
+						"sortOrder": "natural"
+					}
+				},
+				"useSortedKeys": {
+					"level": "on",
+					"options": {
+						"sortOrder": "natural"
+					}
+				},
+				"useSortedProperties": "on"
+			}
+		},
+		"enabled": true
+	},
+	"css": {
+		"formatter": {
+			"enabled": true
+		},
+		"linter": {
+			"enabled": true
+		}
+	},
+	"files": {
+		"ignoreUnknown": false,
+		"includes": [
+			"**",
+			"!**/*.gen.*",
+			"!**/plugins",
+			"!**/scripts",
+			"!**/worker-configuration.d.ts"
+		]
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab",
+		"indentWidth": 2,
+		"lineWidth": 80
+	},
+	"html": {
+		"formatter": {
+			"attributePosition": "auto",
+			"bracketSameLine": true,
+			"enabled": true,
+			"indentScriptAndStyle": true,
+			"indentStyle": "tab",
+			"indentWidth": 2,
+			"lineEnding": "lf",
+			"lineWidth": 80,
+			"selfCloseVoidElements": "always",
+			"whitespaceSensitivity": "strict"
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"attributePosition": "auto",
+			"bracketSpacing": true,
+			"enabled": true,
+			"indentStyle": "tab",
+			"indentWidth": 2,
+			"jsxQuoteStyle": "single",
+			"lineEnding": "lf",
+			"lineWidth": 80,
+			"quoteStyle": "single",
+			"semicolons": "always",
+			"trailingCommas": "all"
+		},
+		"parser": {
+			"unsafeParameterDecoratorsEnabled": true
+		}
+	},
+	"json": {
+		"formatter": {
+			"indentStyle": "tab",
+			"trailingCommas": "none"
+		},
+		"parser": {
+			"allowComments": true,
+			"allowTrailingCommas": true
+		}
+	},
+	"linter": {
+		"domains": {
+			"project": "recommended",
+			"test": "recommended",
+			"vue": "recommended"
+		},
+		"enabled": true,
+		"rules": {
+			"complexity": {
+				"noUselessStringConcat": "error",
+				"useSimplifiedLogicExpression": "error"
+			},
+			"correctness": {
+				"useJsonImportAttributes": "error"
+			},
+			"nursery": {
+				"noUselessUndefined": "error",
+				"useSortedClasses": {
+					"fix": "safe",
+					"level": "error",
+					"options": {
+						"attributes": [
+							"className",
+							"u-sm",
+							"u-md",
+							"u-lg",
+							"u-xl",
+							"u-2xl"
+						],
+						"functions": ["clsx", "classnames", "cn", "tw"]
+					}
+				}
+			},
+			"performance": {
+				"noReExportAll": "error",
+				"useTopLevelRegex": "error"
+			},
+			"recommended": true,
+			"style": {
+				"noImplicitBoolean": "error",
+				"noInferrableTypes": "error",
+				"noNegationElse": "error",
+				"noParameterAssign": "error",
+				"noUnusedTemplateLiteral": "error",
+				"noUselessElse": "error",
+				"useAsConstAssertion": "error",
+				"useCollapsedElseIf": "error",
+				"useCollapsedIf": "error",
+				"useConsistentObjectDefinitions": {
+					"level": "error",
+					"options": {
+						"syntax": "shorthand"
+					}
+				},
+				"useDefaultParameterLast": "error",
+				"useEnumInitializers": "error",
+				"useExplicitLengthCheck": "error",
+				"useNamingConvention": {
+					"level": "error",
+					"options": {
+						"conventions": [
+							{
+								"formats": ["PascalCase"],
+								"match": "(.*)|(.*?)Error",
+								"selector": {
+									"kind": "interface"
+								}
+							},
+							{
+								"formats": ["PascalCase"],
+								"match": "[A-Z][a-zA-Z]+",
+								"selector": {
+									"kind": "enum"
+								}
+							},
+							{
+								"formats": ["camelCase", "PascalCase", "CONSTANT_CASE"],
+								"selector": {
+									"kind": "objectLiteralProperty"
+								}
+							}
+						],
+						"strictCase": false
+					}
+				},
+				"useNumberNamespace": "error",
+				"useObjectSpread": "error",
+				"useSelfClosingElements": "error",
+				"useSingleVarDeclarator": "error",
+				"useThrowNewError": "error"
+			},
+			"suspicious": {
+				"noArrayIndexKey": "off",
+				"noConsole": {
+					"level": "warn",
+					"options": {
+						"allow": ["debug", "info", "error"]
+					}
+				},
+				"noUnknownAtRules": "off"
+			}
+		}
+	},
+	"overrides": [
+		{
+			"assist": {
+				"actions": {
+					"source": {
+						"useSortedKeys": "off"
+					}
+				}
+			},
+			"includes": ["src/**", ".vscode/**", ".github"]
+		},
+		{
+			"assist": {
+				"actions": {
+					"source": {
+						"organizeImports": "off"
+					}
+				}
+			},
+			"includes": ["**/*.astro", "**/*.vue"],
+			"linter": {
+				"enabled": false,
+				"rules": {
+					"correctness": {
+						"noUnusedImports": "off",
+						"noUnusedVariables": "off"
+					}
+				}
+			}
+		}
+	],
+	"vcs": {
+		"clientKind": "git",
+		"enabled": true,
+		"useIgnoreFile": true
+	}
+}

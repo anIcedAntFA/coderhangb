@@ -1,0 +1,35 @@
+# Lefthook configuration for modern React template
+# https://github.com/evilmartians/lefthook
+
+pre-commit:
+  # Run in parallel for faster execution
+  parallel: true
+
+  commands:
+    # Format and lint with Biome (unified tool)
+    format-and-lint:
+      glob: '*.{js,jsx,ts,tsx,json,md,mjs}'
+      run: bun run eslint --fix "{staged_files}"
+      stage_fixed: true
+
+pre-push:
+  # Run comprehensive checks before pushing
+  parallel: false
+
+  commands:
+    # Build check to ensure production readiness
+    build-check:
+      run: bun run build
+
+    # Validate branch name pattern
+    branch-name:
+      run: bunx validate-branch-name
+
+commit-msg:
+  commands:
+    # Validate commit message with commitlint + gitmoji
+    commitlint:
+      run: bunx --bun commitlint --edit {1}
+
+# Color output
+colors: true
