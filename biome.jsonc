@@ -55,6 +55,9 @@
 		"enabled": true
 	},
 	"css": {
+		"assist": {
+			"enabled": true
+		},
 		"formatter": {
 			"enabled": true
 		},
@@ -69,7 +72,8 @@
 			"!**/*.gen.*",
 			"!**/plugins",
 			"!**/scripts",
-			"!**/worker-configuration.d.ts"
+			"!**/worker-configuration.d.ts",
+			"!bun.lock"
 		]
 	},
 	"formatter": {
@@ -242,14 +246,18 @@
 					}
 				}
 			},
+			"formatter": {
+				"enabled": false
+			},
 			"includes": ["**/*.astro", "**/*.vue"],
 			"linter": {
-				"enabled": false,
+				"enabled": true,
 				"rules": {
 					"correctness": {
 						"noUnusedImports": "off",
 						"noUnusedVariables": "off"
-					}
+					},
+					"recommended": true
 				}
 			}
 		}

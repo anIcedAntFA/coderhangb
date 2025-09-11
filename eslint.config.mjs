@@ -1,25 +1,36 @@
-import antfu from '@antfu/eslint-config';
+import unocss from '@unocss/eslint-config/flat';
+import eslintPluginAstro from 'eslint-plugin-astro';
 
-export default antfu({
-	astro: true,
-	formatters: {
-		astro: true,
-		svg: true,
+export default [
+	{
+		ignores: [
+			// Ignore the following files and directories
+			'node_modules',
+			'dist',
+			'public',
+			'astro.config.mjs',
+			'eslint.config.mjs',
+			'vite.config.js',
+			'.wrangler',
+		],
 	},
-	ignores: [
-		'dist',
-		'node_modules',
-		'scripts',
-		'plugins',
-		'*.gen.*',
-		'worker-configuration.d.ts',
-	],
-	stylistic: {
-		indent: 'tab',
-		quotes: 'single',
-		semi: true,
-		singleQuote: true,
-		trailingComma: 'all',
+	// add more generic rule sets here, such as:
+	// js.configs.recommended,
+	...eslintPluginAstro.configs.recommended,
+	{
+		rules: {
+			// override/add rules settings here, such as:
+			// "astro/no-set-html-directive": "error"
+		},
 	},
-	vue: true,
-});
+	// UnoCSS configuration
+	unocss,
+	// Make UnoCSS warnings into errors
+	{
+		files: ['**/*.{astro,vue}'],
+		rules: {
+			'unocss/order': 'error', // This overrides the warning to error
+			'unocss/order-attributify': 'error',
+		},
+	},
+];

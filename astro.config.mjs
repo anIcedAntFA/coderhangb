@@ -7,11 +7,30 @@ import UnoCSS from 'unocss/astro';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://coderhangb.ngockhoi96.dev',
+	adapter: cloudflare({
+		imageService: 'compile',
+		platformProxy: {
+			configPath: './wrangler.jsonc',
+			enabled: true,
+		},
+	}),
+	image: {
+		domains: ['assets.ngockhoi96.dev'],
+		layout: 'constrained',
+		objectFit: 'cover',
+		objectPosition: 'center',
+		remotePatterns: [
+			{
+				hostname: 'assets.ngockhoi96.dev',
+				protocol: 'https',
+			},
+		],
+		service: sharpImageService(),
+	},
 	integrations: [
 		UnoCSS({
-			injectReset: false,
 			configFile: './uno.config.ts',
+			injectReset: false,
 		}),
 		mdx(),
 		sitemap(),
@@ -19,58 +38,32 @@ export default defineConfig({
 			appEntrypoint: '/src/pages/_app.ts',
 		}),
 	],
-	adapter: cloudflare({
-		platformProxy: {
-			enabled: true,
-			configPath: './wrangler.jsonc',
+	markdown: {
+		shikiConfig: {
+			themes: {
+				dark: 'dracula',
+				light: 'min-light',
+			},
 		},
-		imageService: 'compile',
-	}),
+		syntaxHighlight: 'shiki',
+	},
 	output: 'static',
-	srcDir: 'src',
-	server: ({ command }) => ({
-		port: command === 'dev' ? 3333 : 4444,
-		host: true,
-	}),
 	prefetch: {
 		defaultStrategy: 'hover',
 		prefetchAll: true,
 	},
-	image: {
-		domains: ['assets.ngockhoi96.dev'],
-		remotePatterns: [
-			{
-				protocol: 'https',
-				hostname: 'assets.ngockhoi96.dev',
-			},
-		],
-		layout: 'constrained',
-		objectFit: 'cover',
-		objectPosition: 'center',
-		service: sharpImageService(),
-	},
-	markdown: {
-		syntaxHighlight: 'shiki',
-		shikiConfig: {
-			themes: {
-				light: 'min-light',
-				dark: 'dracula',
-			},
-		},
-	},
+	server: ({ command }) => ({
+		host: true,
+		port: command === 'dev' ? 3333 : 4444,
+	}),
+	site: 'https://coderhangb.ngockhoi96.dev',
+	srcDir: 'src',
 	vite: {
-		resolve: {
-			alias: {
-				'@': '/src',
-			},
-		},
 		build: {
-			outDir: 'dist',
-			sourcemap: true,
-			target: 'esnext',
-			minify: 'esbuild',
 			cssCodeSplit: true,
 			cssMinify: 'esbuild',
+			minify: 'esbuild',
+			outDir: 'dist',
 			rollupOptions: {
 				output: {
 					manualChunks: (id) => {
@@ -84,13 +77,18 @@ export default defineConfig({
 								return;
 							}
 
-							if (id.includes('@vue'))
-								return 'vue';
+							if (id.includes('@vue')) return 'vue';
 						}
 					},
 				},
 			},
+			sourcemap: true,
+			target: 'esnext',
 		},
-
+		resolve: {
+			alias: {
+				'@': '/src',
+			},
+		},
 	},
 });

@@ -6,23 +6,48 @@ pre-commit:
   parallel: true
 
   commands:
-    # Format and lint with Biome (unified tool)
-    format-and-lint:
+    # --- Formatter & Linter for JS/TS/JSON ---
+    # Biome will format, lint, and apply safe fixes to its supported files.
+    # It is the single source of truth for these file types.
+    biome:
       glob: '*.{js,jsx,ts,tsx,json,md,mjs}'
-      run: bun run eslint --fix "{staged_files}"
+      # CORRECTED: Use --write as specified in the Biome docs for this use case.
+      run: bunx @biomejs/biome check --write --no-errors-on-unmatched --colors=off {staged_files}
       stage_fixed: true
+
+    # --- Formatter for Astro/Vue ---
+    # Prettier handles formatting for files Biome doesn't cover.
+    prettier:
+      glob: '*.{astro}'
+      run: bun prettier --write {staged_files}
+      stage_fixed: true
+
+    # --- Linter for Astro & Vue ---
+    # ESLint provides framework-specific linting and fixes.
+    eslint:
+      glob: '*.{astro}'
+      run: bun eslint --fix {staged_files}
+      stage_fixed: true
+
+    # Check all types across the project
+    check-types:
+      run: bun run check:types
 
 pre-push:
   # Run comprehensive checks before pushing
   parallel: false
 
   commands:
+    # Check for circular dependencies
+    check-deps:
+      run: bun run check:circular-deps
+
     # Build check to ensure production readiness
     build-check:
       run: bun run build
 
     # Validate branch name pattern
-    branch-name:
+    branch-name-check:
       run: bunx validate-branch-name
 
 commit-msg:

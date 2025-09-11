@@ -1,0 +1,25 @@
+# Deep Directories
+**/dist
+**/smoke
+**/node_modules
+**/fixtures
+**/vendor
+**/.vercel
+
+# Directories
+.github
+.changeset
+
+# Files
+bun.lock
+
+# Formatted by Biome
+**/*.json
+**/*.jsonc
+**/*.js
+**/*.ts
+**/*.tsx
+**/*.jsx
+**/*.mjs
+**/*.cjs
+**/*.css

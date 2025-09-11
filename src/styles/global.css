@@ -1,18 +1,18 @@
 @theme {
-  --clamp-xs: clamp(0.75rem, 0.5795rem + 0.5682vw, 0.875rem);
-  --clamp-xs-lh: 1.2;
-  --clamp-sm: clamp(0.875rem, 0.7045rem + 0.5682vw, 1rem);
-  --clamp-sm-lh: 1.25;
-  --clamp-base: clamp(1rem, 0.6591rem + 1.1364vw, 1.25rem);
-  --clamp-base-lh: 1.5;
-  --clamp-md: clamp(1.125rem, 0.5rem + 2.0833vw, 1.5rem);
-  --clamp-md-lh: 1.5;
-  --clamp-lg: clamp(1.25rem, 0.4167rem + 2.7778vw, 1.75rem);
-  --clamp-lg-lh: 1.6;
-  --clamp-xl: clamp(1.5rem, 0.8182rem + 2.2727vw, 2rem);
-  --clamp-xl-lh: 1.6;
-  --clamp-2xl: clamp(2rem, 0.6364rem + 4.5455vw, 3rem);
-  --clamp-2xl-lh: 1.2;
+	--clamp-xs: clamp(0.75rem, 0.5795rem + 0.5682vw, 0.875rem);
+	--clamp-xs-lh: 1.2;
+	--clamp-sm: clamp(0.875rem, 0.7045rem + 0.5682vw, 1rem);
+	--clamp-sm-lh: 1.25;
+	--clamp-base: clamp(1rem, 0.6591rem + 1.1364vw, 1.25rem);
+	--clamp-base-lh: 1.5;
+	--clamp-md: clamp(1.125rem, 0.5rem + 2.0833vw, 1.5rem);
+	--clamp-md-lh: 1.5;
+	--clamp-lg: clamp(1.25rem, 0.4167rem + 2.7778vw, 1.75rem);
+	--clamp-lg-lh: 1.6;
+	--clamp-xl: clamp(1.5rem, 0.8182rem + 2.2727vw, 2rem);
+	--clamp-xl-lh: 1.6;
+	--clamp-2xl: clamp(2rem, 0.6364rem + 4.5455vw, 3rem);
+	--clamp-2xl-lh: 1.2;
 }
 
 html {

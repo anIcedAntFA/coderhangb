@@ -1,8 +1,8 @@
 ---
 import BaseHead from '@/components/base-head.astro';
+import Header from '@/components/Header.astro';
 import Button from '@/components/button.astro';
 import Footer from '@/components/Footer.astro';
-import Header from '@/components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '@/consts';
 ---
 
@@ -14,20 +14,21 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '@/consts';
 	<body>
 		<Header />
 		<main>
-			<h1 class='heading-11 m-1 px-10'>🧑‍🚀 Hello, Astronaut!</h1>
+			<h1 class='px-10 m-1'>🧑‍🚀 Hello, Astronaut!</h1>
 			<!-- Different sizes -->
-			<article class='prose prose-sm'>Small typography</article>
+			<article class='prose prose-sm'>Small preltypography</article>
 			<article class='prose prose-base'>Base typography (default)</article>
 			<article class='prose prose-lg'>Large typography</article>
 			<article class='prose prose-xl'>Extra large typography</article>
+
 			<article class='prose prose-2xl'>2X large typography</article>
 
 			<div
+				u-sm='text-sm bg-blue-200 p-4'
 				class='text-xs mt-4 p-2 bg-green-200'
-				sm='text-sm bg-blue-200 p-4'
-				md='p-6 bg-purple-200 text-base'
-				lg='bg-orange-200 p-8 text-lg'
-				xl='bg-pink-200 p-10 text-xl'
+				u-lg='     p-8 text-lg bg-orange-200'
+				u-xl=' p-10 text-xl bg-pink-200'
+				u-md='p-6 bg-purple-200 text-base'
 			>
 				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate
 				veniam esse saepe eos numquam. Nisi praesentium expedita quibusdam
@@ -60,6 +61,12 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '@/consts';
 			<Button outlined variant='danger' size='lg'>
 				<span>Click me!</span>
 			</Button>
+
+			<p class='text-brand-primary'>
+				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia dicta
+				voluptate quas iure repellat id ex quisquam repudiandae. Dolores a,
+				expedita illo fugit labore libero cupiditate cum impedit quam nisi.
+			</p>
 
 			<i class='i-logos:astro text-xl'></i>
 			<!-- A basic anchor icon from Phosphor icons -->
@@ -116,7 +123,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '@/consts';
 				<a href='https://docs.astro.build/'>read the docs</a>
 				or <a href='https://astro.build/chat'>join us on Discord</a> to ask questions.
 			</p>
-			<p class='bg-main text-main' bg='cyan'>
+			<p class='bg-main text-main' u-bg='cyan'>
 				Looking for a blog template with a bit more personality? Check out
 				<a href='https://github.com/Charca/astro-blog-template'
 					>astro-blog-template</a
@@ -130,7 +137,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '@/consts';
 				dolores optio eveniet neque at, laborum eum? Cumque, quaerat delectus!
 				Eaque?
 			</p>
-			<p class='text-clamp-sm border-2 rounded-3xl bg-subtle'>
+			<p class='text-clamp-sm bg-subtle border-2 rounded-3xl'>
 				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi
 				cupiditate quisquam ea aliquam iure eaque accusamus doloribus ex fugit
 				dolores optio eveniet neque at, laborum eum? Cumque, quaerat delectus!
@@ -191,7 +198,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '@/consts';
 			<h5 class='heading-5'>Lorem ipsum dolor sit amet</h5>
 
 			<!-- Typography examples with configured color schemes -->
-			<div class='max-w-none prose text-clamp-content'>
+			<div class='text-clamp-content max-w-none prose'>
 				<h1 class='headings'>
 					Heading 1 - Uses gray-900 in light mode, white in dark mode
 				</h1>
