@@ -141,6 +141,13 @@
 			},
 			"nursery": {
 				"noUselessUndefined": "error",
+				"useConsistentTypeDefinitions": {
+					"fix": "safe",
+					"level": "error",
+					"options": {
+						"style": "interface"
+					}
+				},
 				"useSortedClasses": {
 					"fix": "safe",
 					"level": "error",
@@ -181,6 +188,7 @@
 				"useDefaultParameterLast": "error",
 				"useEnumInitializers": "error",
 				"useExplicitLengthCheck": "error",
+				"useImportType": "error",
 				"useNamingConvention": {
 					"level": "error",
 					"options": {
@@ -258,6 +266,16 @@
 						"noUnusedVariables": "off"
 					},
 					"recommended": true
+				}
+			}
+		},
+		{
+			"includes": ["src/**", "!src/pages/_app.ts"],
+			"linter": {
+				"rules": {
+					"style": {
+						"noDefaultExport": "error"
+					}
 				}
 			}
 		}
