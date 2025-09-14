@@ -41,6 +41,10 @@ export default defineConfig({
 			collections: {
 				carbon: () =>
 					import('@iconify-json/carbon/icons.json').then((i) => i.default),
+				custom: {
+					circle:
+						'<svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50"></circle></svg>',
+				},
 				logos: () =>
 					import('@iconify-json/logos/icons.json').then(
 						// biome-ignore lint/suspicious/noExplicitAny: <no need>

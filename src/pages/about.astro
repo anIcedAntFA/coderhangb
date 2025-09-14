@@ -1,5 +1,6 @@
 ---
 import AboutHeroImage from '@/assets/blog-placeholder-about.jpg';
+import { ResourcePost } from '@/components/resoure/resoure';
 import Layout from '@/layouts/BlogPost.astro';
 ---
 
@@ -9,6 +10,7 @@ import Layout from '@/layouts/BlogPost.astro';
 	pubDate={new Date('August 08 2021')}
 	heroImage={AboutHeroImage}
 >
+	<ResourcePost />
 	<div class='prose prose-lg'>
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

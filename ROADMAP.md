@@ -3,8 +3,10 @@
 ## Tech Stack
 
 - Astro
-- Cloudflare
+- Qwik
 - Unocss
+- Hono
+- Cloudflare
 - Biomejs, Eslint, Prettier
 - Lefthook, Commitlint, Cz-git
 
@@ -24,7 +26,7 @@
   - category
   - tags
   - author
-  - seo:  
+  - seo:
     - title
     - description
     - image
@@ -48,3 +50,25 @@
 5. Sorting Options
    - Implement sorting primarily by Latest (publishDate descending), and View Count
 6. Pagination (Standard)
+
+### 3. Asset Handling (Images & Videos)
+
+- Cloudflare R2 storage
+- Cloudflare Images transformation
+
+### 4. Search Functionality
+
+- Cloudflare Worker
+- Orama search
+
+### 5. View Counting Functionality
+
+- Cloudflare KV store
+- Astro API Routes/Actions
+
+### 6. Like Functionality
+
+- Cloudflare KV store
+- Astro API Routes/Actions
+
+## 7. Email Subscription

@@ -20,15 +20,7 @@
 							":BLANK_LINE:",
 							// Group 4: Alias imports (e.g., @/shared)
 							// This covers all aliases starting with @/
-							[
-								// "@/app/**",
-								// "@/core/atom/**",
-								// "@/core/molecule/**",
-								// "@/core/organism/**",
-								// "@/core/template/**",
-								// "@/shared/**",
-								"@/**"
-							],
+							["@/**"],
 							":BLANK_LINE:",
 							// Group 5: Relative imports (e.g., ../organisms, ./molecules)
 							// Covers both parent directory (../) and current directory (./) relative paths
@@ -127,6 +119,7 @@
 	"linter": {
 		"domains": {
 			"project": "recommended",
+			"qwik": "recommended",
 			"test": "recommended",
 			"vue": "recommended"
 		},

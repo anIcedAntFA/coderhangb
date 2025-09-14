@@ -2,7 +2,8 @@
 	"compilerOptions": {
 		"baseUrl": ".",
 		"isolatedModules": true,
-		"jsx": "preserve",
+		"jsx": "react-jsx",
+		"jsxImportSource": "@builder.io/qwik",
 		"paths": {
 			"@/*": ["src/*"]
 		},

@@ -4,6 +4,8 @@ import Header from '@/components/Header.astro';
 import Button from '@/components/button.astro';
 import Footer from '@/components/Footer.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '@/consts';
+import { Counter } from '@/components/counter';
+import { Greeter } from '@/components/greeter';
 ---
 
 <!doctype html>
@@ -20,8 +22,12 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '@/consts';
 			<article class='prose prose-base'>Base typography (default)</article>
 			<article class='prose prose-lg'>Large typography</article>
 			<article class='prose prose-xl'>Extra large typography</article>
-
 			<article class='prose prose-2xl'>2X large typography</article>
+
+			<Counter />
+
+			<Greeter name='World' />
+			<Greeter name='Mars' />
 
 			<div
 				u-sm='text-sm bg-blue-200 p-4'
@@ -67,6 +73,8 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '@/consts';
 				voluptate quas iure repellat id ex quisquam repudiandae. Dolores a,
 				expedita illo fugit labore libero cupiditate cum impedit quam nisi.
 			</p>
+
+			<span class='i-custom:circle'></span>
 
 			<i class='i-logos:astro text-xl'></i>
 			<!-- A basic anchor icon from Phosphor icons -->

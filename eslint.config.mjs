@@ -29,7 +29,7 @@ export default [
 	{
 		files: ['**/*.{astro,vue}'],
 		rules: {
-			'unocss/order': 'error', // This overrides the warning to error
+			'unocss/order': 'error',
 			'unocss/order-attributify': 'error',
 		},
 	},

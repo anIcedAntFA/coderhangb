@@ -12,6 +12,8 @@
 		"@astrojs/sitemap": "^3.5.1",
 		"@astrojs/ts-plugin": "^1.10.4",
 		"@astrojs/vue": "^5.1.1",
+		"@builder.io/qwik": "^1.16.0",
+		"@qwikdev/astro": "^0.8.2",
 		"astro": "^5.13.7",
 		"sharp": "^0.34.3",
 		"typescript": "^5.9.2",

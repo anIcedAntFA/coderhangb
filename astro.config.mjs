@@ -2,8 +2,33 @@ import cloudflare from '@astrojs/cloudflare';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import vue from '@astrojs/vue';
+import qwikdev from '@qwikdev/astro';
 import { defineConfig, sharpImageService } from 'astro/config';
+import { FontaineTransform } from 'fontaine';
 import UnoCSS from 'unocss/astro';
+
+const options = {
+	// You can specify fallbacks as an array (applies to all fonts)
+	fallbacks: [
+		'BlinkMacSystemFont',
+		'Segoe UI',
+		'Helvetica Neue',
+		'Arial',
+		'Noto Sans',
+	],
+
+	// Or as an object to configure specific fallbacks per font family
+	// fallbacks: {
+	//   Poppins: ['Helvetica Neue'],
+	//   'JetBrains Mono': ['Courier New']
+	// },
+
+	// You may need to resolve assets like `/fonts/Roboto.woff2` to a particular directory
+	resolvePath: (id) => `file:///path/to/public/dir${id}`,
+	// overrideName: (originalName) => `${name} override`
+	// sourcemap: false
+	// skipFontFaceGeneration: (fallbackName) => fallbackName === 'Roboto override'
+};
 
 // https://astro.build/config
 export default defineConfig({
@@ -32,6 +57,7 @@ export default defineConfig({
 			configFile: './uno.config.ts',
 			injectReset: false,
 		}),
+		qwikdev(),
 		mdx(),
 		sitemap(),
 		vue({
@@ -47,7 +73,7 @@ export default defineConfig({
 		},
 		syntaxHighlight: 'shiki',
 	},
-	output: 'static',
+	output: 'server',
 	prefetch: {
 		defaultStrategy: 'hover',
 		prefetchAll: true,
@@ -85,6 +111,7 @@ export default defineConfig({
 			sourcemap: true,
 			target: 'esnext',
 		},
+		plugins: [FontaineTransform.vite(options)],
 		resolve: {
 			alias: {
 				'@': '/src',
