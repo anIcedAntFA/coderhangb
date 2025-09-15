@@ -1,8 +1,18 @@
 ---
 title: 'Third post'
 description: 'Lorem ipsum dolor sit amet'
-pubDate: 'Jul 22 2022'
-heroImage: '../../assets/blog-placeholder-2.jpg'
+publishedDate: '2025-05-01'
+image: '../../assets/blog-placeholder-3.jpg'
+tags:
+  - css
+seo:
+  slug: mastering-css-pseudo-element-techniques
+  title: 'Mastering CSS Pseudo-Elements: Practical Use Cases & Expert Tips'
+  description: Explore a senior frontend engineer's go-to CSS pseudo-element techniques for enhancing UIs, optimizing performance, and writing cleaner, more maintainable code.
+  image: '../../assets/blog-placeholder-3.jpg'
+author: ngockhoi96
+---
+
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

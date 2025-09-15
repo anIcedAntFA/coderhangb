@@ -163,7 +163,6 @@
 			},
 			"recommended": true,
 			"style": {
-				"noImplicitBoolean": "error",
 				"noInferrableTypes": "error",
 				"noNegationElse": "error",
 				"noParameterAssign": "error",
@@ -252,13 +251,16 @@
 			},
 			"includes": ["**/*.astro", "**/*.vue"],
 			"linter": {
-				"enabled": true,
 				"rules": {
 					"correctness": {
 						"noUnusedImports": "off",
 						"noUnusedVariables": "off"
 					},
-					"recommended": true
+
+					"style": {
+						"useConst": "off",
+						"useImportType": "off"
+					}
 				}
 			}
 		},

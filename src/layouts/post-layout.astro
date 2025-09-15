@@ -1,14 +1,21 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import { Image } from 'astro:assets';
 import BaseHead from '@/components/base-head.astro';
+import { Datetime } from '@/components/datetime';
+import { formatPostDatetime } from '@/components/datetime/datetime.lib';
 import Footer from '@/components/Footer.astro';
-import FormattedDate from '@/components/FormattedDate.astro';
 import Header from '@/components/Header.astro';
+
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, publishedDate, modifiedDate, image } = Astro.props;
+
+const formattedDate = formatPostDatetime({
+	pubDatetime: publishedDate,
+	modDatetime: modifiedDate,
+});
 ---
 
 <html lang='en'>
@@ -60,23 +67,19 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<main>
 			<article>
 				<div class='hero-image'>
-					{
-						heroImage && (
-							<Image width={1020} height={510} src={heroImage} alt='' />
-						)
-					}
+					{image && <Image width={1020} height={510} src={image} alt='' />}
 				</div>
 				<div class='prose'>
 					<div class='title'>
 						<div class='date'>
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
+							<Datetime {...formattedDate} />
+							<!-- {
+								modifiedDate && (
 									<div class='last-updated-on'>
-										Last updated on <FormattedDate date={updatedDate} />
+										Last updated on <FormattedDate date={modifiedDate} />
 									</div>
 								)
-							}
+							} -->
 						</div>
 						<h1>{title}</h1>
 						<hr />

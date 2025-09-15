@@ -1,8 +1,18 @@
 ---
 title: 'Markdown Style Guide'
 description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
-pubDate: 'Jun 19 2024'
-heroImage: '../../assets/blog-placeholder-1.jpg'
+publishedDate: '2025-05-01'
+image: '../../assets/blog-placeholder-3.jpg'
+tags:
+  - css
+seo:
+  slug: mastering-css-pseudo-element-techniques
+  title: 'Mastering CSS Pseudo-Elements: Practical Use Cases & Expert Tips'
+  description: Explore a senior frontend engineer's go-to CSS pseudo-element techniques for enhancing UIs, optimizing performance, and writing cleaner, more maintainable code.
+  image: '../../assets/blog-placeholder-3.jpg'
+author: ngockhoi96
+---
+
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing

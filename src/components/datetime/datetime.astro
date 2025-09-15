@@ -1,0 +1,26 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+import type { FormattedDatetime } from './datetime.lib';
+
+interface Props extends FormattedDatetime {
+	classes?: HTMLAttributes<'div'>['class'];
+}
+
+const UPDATED_LABEL_TEXT = 'Updated:';
+
+const { isoDatetime, displayDatetime, isModified, classes } = Astro.props;
+---
+
+<div class:list={['datetime-wrapper', classes]}>
+	<div class='i-mdi:calendar text-amber w-10'></div>
+	{isModified && <span>{UPDATED_LABEL_TEXT}</span>}
+	<time datetime={isoDatetime}>{displayDatetime}</time>
+</div>
+
+<style>
+	.datetime-wrapper {
+		@apply flex items-center gap-2;
+		@apply text-gray-700 text-sm;
+	}
+</style>

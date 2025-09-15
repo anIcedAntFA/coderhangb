@@ -1,5 +1,6 @@
 import { glob } from 'astro/loaders';
 
+import { TAG_VARIANT } from './config/tag.config';
 import { defineCollection, z } from 'astro:content';
 
 const blog = defineCollection({
@@ -10,10 +11,20 @@ const blog = defineCollection({
 		z.object({
 			title: z.string(),
 			description: z.string(),
-			// Transform string to Date object
-			pubDate: z.coerce.date(),
-			updatedDate: z.coerce.date().optional(),
-			heroImage: image().optional(),
+			image: image().optional(),
+			publishedDate: z.coerce.date(),
+			modifiedDate: z.coerce.date().optional(),
+			isDraft: z.boolean().optional(),
+			isFeatured: z.boolean().optional(),
+			tags: z.array(z.enum(TAG_VARIANT)),
+			author: z.string(),
+			seo: z
+				.object({
+					title: z.string().optional(),
+					description: z.string().optional(),
+					image: image().optional(),
+				})
+				.optional(),
 		}),
 });
 
