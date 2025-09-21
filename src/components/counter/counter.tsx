@@ -1,4 +1,11 @@
-import { $, component$, type QRL, useSignal, useStore } from '@builder.io/qwik';
+import {
+	$,
+	component$,
+	type QRL,
+	useSignal,
+	useStore,
+	useStylesScoped$,
+} from '@builder.io/qwik';
 
 interface CountStore {
 	count: number;
@@ -6,6 +13,14 @@ interface CountStore {
 }
 
 export const Counter = component$(() => {
+	useStylesScoped$(`
+    .count-value {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+  `);
+
 	const count = useSignal(0);
 	const state = useStore({
 		name: 'Counter Component',
@@ -29,7 +44,7 @@ export const Counter = component$(() => {
 			<button onClick$={() => state.increment()} type='button'>
 				Increment
 			</button>
-			<p>Count: {state.count}</p>
+			<p class='count-value'>Count: {state.count}</p>
 		</>
 	);
 });

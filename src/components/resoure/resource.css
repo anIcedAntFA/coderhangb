@@ -1,11 +1,13 @@
 .post-title {
-	margin: 1rem 0 0.5rem 0;
-	font-size: 1.5rem;
+	/* margin: 1rem 0 0.5rem 0;
+	font-size: 1.5rem; */
+	@apply m-4 mt-2 text-2xl;
 }
 
 .post-input {
-	width: 4rem;
+	/* width: 4rem;
 	padding: 0.2rem;
 	margin-right: 1rem;
-	font-size: 1.2rem;
+	font-size: 1.2rem; */
+	@apply w-16 p-1 mr-4 text-lg;
 }

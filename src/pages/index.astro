@@ -1,11 +1,12 @@
 ---
 import BaseHead from '@/components/base-head.astro';
-import Button from '@/components/button.astro';
-import { Counter } from '@/components/counter';
+import AButton from '@/components/button.astro';
+import { Counter } from '@/components/counter/counter';
 import Footer from '@/components/Footer.astro';
 import { Greeter } from '@/components/greeter';
 import Header from '@/components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '@/consts';
+import { Button } from '@/components/button';
 ---
 
 <!doctype html>
@@ -60,13 +61,40 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '@/consts';
 				esse, accusantium architecto velit alias perferendis.
 			</div>
 
-			<Button disabled>
+			<AButton disabled>
 				<span>Click me!</span>
-			</Button>
+			</AButton>
 
-			<Button outlined variant='danger' size='lg'>
+			<AButton outlined variant='danger' size='lg'>
 				<span>Click me!</span>
-			</Button>
+			</AButton>
+
+			<Button size='small'><span class='i-mdi-alarm'></span>hello me</Button>
+			<Button><span class='i-mdi-alarm'></span>hello me</Button>
+			<Button size='large'><span class='i-mdi-alarm'></span>hello me</Button>
+
+			<!-- Test all variants -->
+			<div class='mt-8 p-4 border border-gray-200 rounded flex flex-col gap-4'>
+				<h3 class='text-lg font-bold'>Button Variants Test</h3>
+
+				<div class='flex flex-wrap gap-2'>
+					<Button variant='contained' size='small'>Contained Small</Button>
+					<Button variant='contained' size='medium'>Contained Medium</Button>
+					<Button variant='contained' size='large'>Contained Large</Button>
+				</div>
+
+				<div class='flex flex-wrap gap-2'>
+					<Button variant='outlined' size='small'>Outlined Small</Button>
+					<Button variant='outlined' size='medium'>Outlined Medium</Button>
+					<Button variant='outlined' size='large'>Outlined Large</Button>
+				</div>
+
+				<div class='flex flex-wrap gap-2'>
+					<Button variant='text' size='small'>Text Small</Button>
+					<Button variant='text' size='medium'>Text Medium</Button>
+					<Button variant='text' size='large'>Text Large</Button>
+				</div>
+			</div>
 
 			<p class='text-brand-primary'>
 				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia dicta

@@ -1,0 +1,74 @@
+.btn {
+	position: relative;
+
+	display: inline-flex;
+	align-items: center;
+
+	overflow: hidden;
+
+	font-weight: var(--fw-medium);
+	text-transform: uppercase;
+	letter-spacing: 0.12ch;
+
+	cursor: pointer;
+
+	user-select: none;
+
+	&:hover,
+	&:focus-visible {
+		@apply shadow-lg;
+	}
+
+	&[data-variant="contained"] {
+		--at-apply: bg-brand-primary text-white;
+		@apply transition-transform;
+
+		/* 💫 Glass Shine Pseudo Element */
+		&::before {
+			content: "";
+			background: linear-gradient(
+				90deg,
+				transparent,
+				rgb(255 255 255 / 40%),
+				transparent
+			);
+			@apply absolute top-0 -left-full z-0 w-4/5 h-full pointer-events-none opacity-0;
+			@apply skew-y-12 transition-opacity duration-200 ease-in-out;
+		}
+
+		/* 💫 Hover Effects */
+		&:not(:active):hover::before,
+		&:not(:active):focus-visible::before {
+			opacity: 1;
+
+			animation: shiny-glass 1.2s ease-in-out;
+		}
+
+		&[data-size="small"] {
+			box-shadow: var(--shadow-accent-soft);
+		}
+
+		&[data-size="medium"] {
+			box-shadow: var(--shadow-accent);
+		}
+
+		&[data-size="large"] {
+			box-shadow: var(--shadow-accent-strong);
+		}
+	}
+}
+
+/* 🌈 Glass Shine Animation */
+@keyframes shiny-glass {
+	0% {
+		left: -100%;
+	}
+
+	50% {
+		left: 120%;
+	}
+
+	100% {
+		left: 120%;
+	}
+}

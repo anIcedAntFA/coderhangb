@@ -20,7 +20,12 @@ const { isoDatetime, displayDatetime, isModified, classes } = Astro.props;
 
 <style>
 	.datetime-wrapper {
-		@apply flex items-center gap-2;
-		@apply text-gray-700 text-sm;
+		/* @apply flex items-center gap-2;
+		@apply text-gray-700 text-sm; */
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: #374151; /* text-gray-700 */
+		font-size: 0.875rem; /* text-sm */
 	}
 </style>

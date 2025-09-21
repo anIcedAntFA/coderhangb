@@ -4,11 +4,16 @@ import {
 	useResource$,
 	useSignal,
 	useStylesScoped$,
+	// useStyles$,
 } from '@builder.io/qwik';
 
 import styles from './resource.css?inline';
+// import styles from './resource.module.css';
 
 export const ResourcePost = component$(() => {
+	useStylesScoped$(styles);
+	// useStyles$(styles);
+
 	const postId = useSignal('23');
 
 	const postTitle = useResource$<string>(async ({ track }) => {
@@ -23,18 +28,16 @@ export const ResourcePost = component$(() => {
 		return data.title;
 	});
 
-	useStylesScoped$(styles);
-
 	return (
 		<>
 			<input
-				class='post-input'
+				class={['post-input']}
 				max={100}
 				min={0}
 				type='number'
 				bind:value={postId}
 			/>
-			<h1 class='post-title'>Post#{postId}:</h1>
+			<h1 class={['post-title']}>Post#{postId}:</h1>
 			<Resource
 				onPending={() => <p>Loading...</p>}
 				onResolved={(title) => <h2>{title}</h2>}
