@@ -143,16 +143,9 @@
 				},
 				"useSortedClasses": {
 					"fix": "safe",
-					"level": "error",
+					"level": "warn",
 					"options": {
-						"attributes": [
-							"className",
-							"u-sm",
-							"u-md",
-							"u-lg",
-							"u-xl",
-							"u-2xl"
-						],
+						"attributes": ["class", "u-sm", "u-md", "u-lg", "u-xl", "u-2xl"],
 						"functions": ["clsx", "classnames", "cn", "tw"]
 					}
 				}

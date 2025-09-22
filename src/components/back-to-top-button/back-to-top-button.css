@@ -1,0 +1,31 @@
+.btt-btn-wrapper {
+	@apply op-0 btt-btn-size pointer-events-none sticky bottom-[--btt-btn-size] left-full z-50 mr-[--btt-btn-size] mb-[--btt-btn-size] max-w-160px translate-y-[--btt-btn-size] transition-[opacity,transform];
+
+	@apply max-md:(w-[--btt-btn-size] h-[--btt-btn-size] overflow-visible);
+}
+
+.btt-btn-wrapper--visible {
+	@apply op-100 pointer-events-unset translate-y-0;
+}
+
+.btt-btn {
+	@apply group relative inline-flex h-[--btt-btn-size] cursor-pointer items-center gap-2 rounded-md border border-gray-700/10 bg-gray-50/50 px-3 font-medium text-gray-700 shadow-lg backdrop-blur-xs transition-[border-color,background-color,color];
+	@apply before:(content-empty -z-1 op-0 absolute inset-0 bg-gradient-subtle transition-opacity);
+	@apply hover:(text-brand-primary before:op-100 border-transparent);
+
+	@apply max-md:(
+	  h-full w-full rounded-full border-none p-2,
+		before:(op-100 rounded-inherit) transition-none,
+		after:(content-empty -z-10 absolute inset-0 block scale-110 rounded-full bg-progress-conic)
+	);
+}
+
+.btt-btn-icon-wrapper {
+	@apply flex h-[calc(var(--btt-btn-size)-0.5rem)] items-center justify-center overflow-hidden;
+
+	@apply max-md:(w-[--btt-btn-size] h-[--btt-btn-size]);
+}
+
+.btt-btn-icon {
+	@apply i-mdi:arrow-up h-1.5em w-1.5em group-hover:animate-icon-cycle-up;
+}

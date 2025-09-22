@@ -1,4 +1,5 @@
 ---
+import { BackToTopButton } from '@/components/back-to-top-button';
 import BaseHead from '@/components/base-head.astro';
 import { Datetime } from '@/components/datetime';
 import { formatPostDatetime } from '@/components/datetime/datetime.lib';
@@ -56,6 +57,7 @@ const formattedDate = formatPostDatetime({
 				</div>
 			</article>
 		</main>
+		<BackToTopButton />
 		<Footer />
 	</body>
 </html>

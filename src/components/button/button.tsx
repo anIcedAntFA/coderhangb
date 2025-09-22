@@ -10,7 +10,6 @@ export type ButtonProps = PropsOf<'button'> & {
 	size?: ButtonSize;
 };
 
-// Variant and size class mappings for better maintainability
 const buttonVariants: Record<ButtonVariant, string> = {
 	contained: 'btn-contained',
 	outlined: 'btn-outlined',
